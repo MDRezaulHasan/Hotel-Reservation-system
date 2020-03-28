@@ -19,7 +19,7 @@ class HotelDetails extends Component {
         method: "GET",
         headers: {
           "x-rapidapi-host": "hotels4.p.rapidapi.com",
-          "x-rapidapi-key": "ffd30b4aecmshebc72ac36f6a2b1p16ee13jsn2c5864f12f9a"
+          "x-rapidapi-key": ""
         }
       }
     )
