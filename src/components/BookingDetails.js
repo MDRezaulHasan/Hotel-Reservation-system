@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import BookingDetailsForm from "./BookingDetailsForm";
 
 class BookingDetails extends Component {
   render() {
     return (
       <div>
-        <h1>Booking Details</h1>
+        <h4>Booking details:</h4>
+        <BookingDetailsForm />
       </div>
     );
   }

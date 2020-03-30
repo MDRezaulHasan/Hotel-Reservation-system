@@ -17,7 +17,7 @@ class Forcast extends Component {
         method: "GET",
         headers: {
           "x-rapidapi-host": "hotels4.p.rapidapi.com",
-          "x-rapidapi-key": ""
+          "x-rapidapi-key": "ffd30b4aecmshebc72ac36f6a2b1p16ee13jsn2c5864f12f9a"
         }
       }
     )
@@ -41,17 +41,27 @@ class Forcast extends Component {
         {this.state.suggestions.map(suggestion => {
           return (
             <div key={suggestion.group}>
-              <table class="table">
+              <table className="table">
                 <tr key={suggestion.group}>
                   <td>{suggestion.group}</td>
                   <td>
-                    <p>{suggestion.entities[0].type}</p>
-                  </td>
-                  <td>
-                    <p>{suggestion.entities[0].destinationId}</p>
-                  </td>
-                  <td>
-                    <Link to="/hoteldetails">Go</Link>
+                    {suggestion.entities.map(entitie => {
+                      return (
+                        <div>
+                          <p>{entitie.type}</p>
+                          <button>
+                            <Link
+                              to={{
+                                pathname: `/hoteldetails/${entitie.destinationId}`,
+                               
+                              }}
+                            >
+                              Go
+                            </Link>
+                          </button>
+                        </div>
+                      );
+                    })}
                   </td>
                 </tr>
               </table>

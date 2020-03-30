@@ -13,13 +13,15 @@ class HotelDetails extends Component {
 
   getForcast = async () => {
     //const locationName = document.getElementById("locationName").value;
+    
+
     const data = await fetch(
       `https://hotels4.p.rapidapi.com/properties/list?destinationId=1506246&type=CITY&pageNumber=1&pageSize=25&adults1=1`,
       {
         method: "GET",
         headers: {
           "x-rapidapi-host": "hotels4.p.rapidapi.com",
-          "x-rapidapi-key": ""
+          "x-rapidapi-key": "ffd30b4aecmshebc72ac36f6a2b1p16ee13jsn2c5864f12f9a"
         }
       }
     )
@@ -39,6 +41,7 @@ class HotelDetails extends Component {
   };
 
   render() {
+    console.log("props: " + this.props);
     //JSX code will go here
     return (
       <div className="container">
@@ -69,7 +72,9 @@ class HotelDetails extends Component {
                     {result.address.countryCode}
                   </p>
                   <button className="recipe_buttons">
-                    <Link to={{ pathname:`/bookingdetails/${result.id}`}}>Booking details</Link>
+                    <Link to={{ pathname: `/bookingdetails/${result.id}`}}>
+                      Booking details
+                    </Link>
                   </button>
                 </div>
               </div>

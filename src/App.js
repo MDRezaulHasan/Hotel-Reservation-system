@@ -17,11 +17,10 @@ class App extends Component {
           <Route path="/" exact>
             <Forecast />
           </Route>
-          <Route path="/hoteldetails">
+          <Route path="/hoteldetails/:id">
             <HotelDetails />
           </Route>
           <Route path="/bookingdetails/:id">
-            {" "}
             <BookingDetails />
           </Route>
         </Router>
